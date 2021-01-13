@@ -851,7 +851,7 @@ int32_t HalImpl::setLayerPlaneAlpha(int64_t display, int64_t layer, float alpha)
     ExynosLayer *halLayer;
     RET_IF_ERR(getHalLayer(display, layer, halLayer));
 
-    return halLayer->setLayerPlaneAlpha(alpha);
+    return mDevice->setLayerPlaneAlpha(halLayer, alpha);
 }
 
 int32_t HalImpl::setLayerSidebandStream([[maybe_unused]] int64_t display,
