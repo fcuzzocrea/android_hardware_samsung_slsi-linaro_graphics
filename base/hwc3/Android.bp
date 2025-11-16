@@ -26,9 +26,6 @@ cc_binary {
     ] + select(soong_config_variable("exynos_hwc", "target_soc_base"), {
         any @ flag_val: [ "-DSOC_VERSION=" + flag_val ],
         default: [],
-    }) + select(soong_config_variable("exynos_hwc", "uses_hwc_services"), {
-        "true": [ "-DHWC_SERVICES" ],
-        default: [],
     }) + select(soong_config_variable("exynos_hwc", "USES_ARCH_ARM64"), {
         "true": ["-DUSES_ARCH_ARM64"],
         default: [],
@@ -75,10 +72,7 @@ cc_binary {
         "liblog",
         "libsync",
         "libutils",
-    ] + select(soong_config_variable("exynos_hwc", "uses_hwc_services"), {
-        "true": [ "libExynosHWCService" ],
-        default: [],
-    }),
+    ],
 
     static_libs: [
         "libaidlcommonsupport",
@@ -88,10 +82,7 @@ cc_binary {
         "android.hardware.graphics.composer3-command-buffer",
         "libgralloc4_headers_exynos",
         "libhdrinterface_header",
-    ] + select(soong_config_variable("exynos_hwc", "uses_hwc_services"), {
-        "true": [ "libbinder_headers" ],
-        default: [],
-    }) + select(soong_config_variable("exynos_hwc", "uses_display_color_interface"), {
+    ] + select(soong_config_variable("exynos_hwc", "uses_display_color_interface"), {
         "true": ["libdisplaycolor_interface"],
         default: [],
     }),
@@ -109,7 +100,6 @@ cc_binary {
         "hardware/samsung_slsi-linaro/graphics/base/libhwc2.1/externaldisplay",
         "hardware/samsung_slsi-linaro/graphics/base/libhwc2.1/virtualdisplay",
         "hardware/samsung_slsi-linaro/graphics/base/libhwc2.1/driver_header",
-        "hardware/samsung_slsi-linaro/graphics/base/libhwc2.1/libhwcService",
     ] + select(soong_config_variable("exynos_hwc", "target_soc_base"), {
         any @ flag_val: [
             "hardware/samsung_slsi-linaro/graphics/base/libhwc2.1/platform/" + flag_val,

@@ -83,9 +83,6 @@ cc_defaults {
     }) + select(soong_config_variable("exynos_hwc", "MINIMUM_DISPLAY_BRIGHTNESS"), {
         any @ flag_val: [ "-DMINIMUM_DISPLAY_BRIGHTNESS=" + flag_val ],
         default: [],
-    }) + select(soong_config_variable("exynos_hwc", "uses_hwc_services"), {
-        "true": [ "-DUSES_HWC_SERVICES" ],
-        default: [],
     }),
 
     static_libs: [
@@ -141,7 +138,6 @@ cc_defaults {
         "externaldisplay",
         "virtualdisplay",
         "driver_header",
-        "libhwcService",
     ] + select(soong_config_variable("exynos_hwc", "target_soc_base"), {
         any @ flag_val: [
             "platform/" + flag_val + "",
@@ -233,29 +229,6 @@ cc_library_shared {
     }),
 }
 
-cc_library_shared {
-    name: "libExynosHWCService",
-    defaults: ["libhwc2_defaults"],
-
-    cflags: [
-        "-DLOG_TAG=\"hwc-service\"",
-    ],
-
-    shared_libs: [
-        "libbinder",
-        "libexynosdisplay",
-    ],
-
-    include_dirs: [
-        "hardware/samsung_slsi-linaro/graphics/base/libhwc2.1/libhwcService",
-    ],
-
-    srcs: [
-        "libhwcService/IExynosHWC.cpp",
-        "libhwcService/ExynosHWCService.cpp",
-    ] ,
-}
-
 soong_config_module_type {
     name: "hwcomposer_cc_library_shared",
     module_type: "cc_library_shared",
@@ -277,10 +250,7 @@ hwcomposer_cc_library_shared {
 
     shared_libs: [
         "libexynosdisplay",
-    ] + select(soong_config_variable("exynos_hwc", "uses_hwc_services"), {
-        "true": [ "libExynosHWCService" ],
-        default: [],
-    }),
+    ],
 
     srcs: [
         "ExynosHWC.cpp",

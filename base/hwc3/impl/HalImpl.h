@@ -167,9 +167,6 @@ private:
 
     std::unique_ptr<ExynosDevice> mDevice;
     EventCallback* mEventCallback;
-#ifdef USES_HWC_SERVICES
-    std::unique_ptr<ExynosHWCCtx> mHwcCtx;
-#endif
     std::unordered_set<Capability> mCaps;
 };
 
