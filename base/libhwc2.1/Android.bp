@@ -83,6 +83,9 @@ cc_defaults {
     }) + select(soong_config_variable("exynos_hwc", "MINIMUM_DISPLAY_BRIGHTNESS"), {
         any @ flag_val: [ "-DMINIMUM_DISPLAY_BRIGHTNESS=" + flag_val ],
         default: [],
+    }) + select(soong_config_variable("exynos_hwc", "USES_VIRTUAL_DISPLAY"), {
+        "true": ["-DUSES_VIRTUAL_DISPLAY"],
+        default: [],
     }),
 
     static_libs: [
