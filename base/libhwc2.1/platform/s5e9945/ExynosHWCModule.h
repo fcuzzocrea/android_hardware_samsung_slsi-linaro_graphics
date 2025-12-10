@@ -118,31 +118,9 @@ const dpp_channel_map_t IDMA_CHANNEL_MAP[] = {
     {MPP_DPP_VG,     1, IDMA_VG1,    IDMA(L13)},
     {MPP_DPP_G,      3, IDMA_G3,     IDMA(L14)},
     {MPP_DPP_VGFS,   1, IDMA_VGFS1,  IDMA(L15)},
-    /* Virtual 8K */
     /* IDMA indecates first thing for shared DPP */
-    {MPP_DPP_VGS,    2, IDMA_VGS8K,   IDMA(L3)},
-    {MPP_DPP_VGFS,   2, IDMA_VGFS8K,  IDMA(L7)},
-    {MPP_DPP_VGRFS,  2, IDMA_VGRFS8K, IDMA(L1)},
     {MPP_P_TYPE_MAX, 0, ODMA_WB,     IDMA(WB)}, // not idma but..
     {static_cast<mpp_phycal_type_t>(MAX_DECON_DMA_TYPE), 0, MAX_DECON_DMA_TYPE, IDMA(WB+1)}
-};
-
-typedef struct virtual_dpp_map {
-    mpp_logical_type_t logicalType;
-    /* Physical index for virtual MPP */
-    uint32_t physicalIndex;
-    mpp_phycal_type_t physicalType;
-    uint32_t physicalIndex1;
-    uint32_t physicalIndex2;
-    decon_idma_type channel1;
-    decon_idma_type channel2;
-    uint32_t    idma; // DECON_IDMA
-} virtual_dpp_map_t;
-
-const virtual_dpp_map_t VIRTUAL_CHANNEL_PAIR_MAP[] = {
-    {MPP_LOGICAL_DPP_VGS8K,   2, MPP_DPP_VGS,   0, 1, IDMA(L3), IDMA(L11), IDMA_VGS8K},
-    {MPP_LOGICAL_DPP_VGFS8K,  2, MPP_DPP_VGFS,  0, 1, IDMA(L7), IDMA(L15), IDMA_VGFS8K},
-    {MPP_LOGICAL_DPP_VGRFS8K, 2, MPP_DPP_VGRFS, 0, 1, IDMA(L1), IDMA(L9),  IDMA_VGRFS8K}
 };
 
 #define MAX_NAME_SIZE   32
@@ -221,10 +199,6 @@ const exynos_mpp_t AVAILABLE_OTF_MPP_UNITS[] = {
     {MPP_DPP_VGFS, MPP_LOGICAL_DPP_VGFS, "DPP_VGFS0", 0, 0, HWC_DISPLAY_VIRTUAL_BIT | HWC_DISPLAY_EXTERNAL_BIT},
    {MPP_DPP_VGRFS, MPP_LOGICAL_DPP_VGRFS, "DPP_VGRFS1", 1, 0, HWC_DISPLAY_VIRTUAL_BIT},
     {MPP_DPP_VGRFS, MPP_LOGICAL_DPP_VGRFS, "DPP_VGRFS0", 0, 0, HWC_DISPLAY_PRIMARY_BIT},
-    /* virtual 8K */
-    {MPP_DPP_VGS, MPP_LOGICAL_DPP_VGS8K, "DPP_VGS8K", 2, 0, HWC_DISPLAY_VIRTUAL_BIT | HWC_DISPLAY_EXTERNAL2_BIT},
-    {MPP_DPP_VGFS, MPP_LOGICAL_DPP_VGFS8K, "DPP_VGFS8K", 2, 0, HWC_DISPLAY_VIRTUAL_BIT | HWC_DISPLAY_EXTERNAL_BIT},
-    {MPP_DPP_VGRFS, MPP_LOGICAL_DPP_VGRFS8K, "DPP_VGRFS8K", 2, 0, HWC_DISPLAY_VIRTUAL_BIT}
 };
 
 const exynos_mpp_t AVAILABLE_M2M_MPP_UNITS[] = {
