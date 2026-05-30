@@ -24,7 +24,6 @@
 #define VSYNC_DEV_PREFIX    "/sys/devices/platform/"
 #define DECON_DRM_NODE     "/dev/dri/card0"
 #define PSR_DEV_NAME        "19f00000.decon_0/psr_info"
-#define USE_DPU_SET_CONFIG
 
 #define HIBER_EXIT_NODE_NAME    "/sys/devices/platform/19f00000.drmdecon/hiber_exit"
 #define BRIGHTNESS_NODE_BASE    "/sys/class/backlight/panel/brightness"
