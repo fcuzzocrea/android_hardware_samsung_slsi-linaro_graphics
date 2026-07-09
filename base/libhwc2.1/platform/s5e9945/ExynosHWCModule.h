@@ -343,12 +343,12 @@ typedef struct HWResourceAmounts {
  * Primary amount = total - others */
 
 const std::map<HWResourceIndexes, HWResourceAmounts_t> HWResourceTables = {
-    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF0, HWC_DISPLAY_PRIMARY),  {0, 80}},
-    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF0, HWC_DISPLAY_EXTERNAL), {80, 80}},
-    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF0, HWC_DISPLAY_VIRTUAL),  {80, 80}},
-    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF1, HWC_DISPLAY_PRIMARY),  {80, 80}},
-    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF1, HWC_DISPLAY_EXTERNAL), {0, 80}},
-    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF1, HWC_DISPLAY_VIRTUAL),  {0, 80}},
+    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF0, HWC_DISPLAY_PRIMARY),  {0, 42}},
+    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF0, HWC_DISPLAY_EXTERNAL), {42, 42}},
+    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF0, HWC_DISPLAY_VIRTUAL),  {42, 42}},
+    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF1, HWC_DISPLAY_PRIMARY),  {0, 42}},
+    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF1, HWC_DISPLAY_EXTERNAL), {0, 42}},
+    {HWResourceIndexes(TDM_ATTR_SRAM_AMOUNT, DPUF1, HWC_DISPLAY_VIRTUAL),  {0, 42}},
 
     {HWResourceIndexes(TDM_ATTR_SCALE, DPUF0, HWC_DISPLAY_PRIMARY),  {0, 2}},
     {HWResourceIndexes(TDM_ATTR_SCALE, DPUF0, HWC_DISPLAY_EXTERNAL), {2, 2}},
@@ -364,12 +364,12 @@ const std::map<HWResourceIndexes, HWResourceAmounts_t> HWResourceTables = {
     {HWResourceIndexes(TDM_ATTR_SBWC, DPUF1, HWC_DISPLAY_EXTERNAL), {0, 2}},
     {HWResourceIndexes(TDM_ATTR_SBWC, DPUF1, HWC_DISPLAY_VIRTUAL),  {0, 2}},
 
-    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF0, HWC_DISPLAY_PRIMARY),  {0, 4}},
-    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF0, HWC_DISPLAY_EXTERNAL), {4, 4}},
-    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF0, HWC_DISPLAY_VIRTUAL),  {4, 4}},
-    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF1, HWC_DISPLAY_PRIMARY),  {4, 4}},
-    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF1, HWC_DISPLAY_EXTERNAL), {0, 4}},
-    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF1, HWC_DISPLAY_VIRTUAL),  {0, 4}},
+    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF0, HWC_DISPLAY_PRIMARY),  {0, 1}},
+    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF0, HWC_DISPLAY_EXTERNAL), {1, 1}},
+    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF0, HWC_DISPLAY_VIRTUAL),  {1, 1}},
+    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF1, HWC_DISPLAY_PRIMARY),  {1, 1}},
+    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF1, HWC_DISPLAY_EXTERNAL), {0, 1}},
+    {HWResourceIndexes(TDM_ATTR_SAJC, DPUF1, HWC_DISPLAY_VIRTUAL),  {0, 1}},
 
     {HWResourceIndexes(TDM_ATTR_ITP, DPUF0, HWC_DISPLAY_PRIMARY),  {0, 4}},
     {HWResourceIndexes(TDM_ATTR_ITP, DPUF0, HWC_DISPLAY_EXTERNAL), {4, 4}},
@@ -378,12 +378,12 @@ const std::map<HWResourceIndexes, HWResourceAmounts_t> HWResourceTables = {
     {HWResourceIndexes(TDM_ATTR_ITP, DPUF1, HWC_DISPLAY_EXTERNAL), {0, 4}},
     {HWResourceIndexes(TDM_ATTR_ITP, DPUF1, HWC_DISPLAY_VIRTUAL),  {0, 4}},
 
-    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF0, HWC_DISPLAY_PRIMARY),  {0, 2}},
-    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF0, HWC_DISPLAY_EXTERNAL), {2, 2}},
-    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF0, HWC_DISPLAY_VIRTUAL),  {2, 2}},
-    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF1, HWC_DISPLAY_PRIMARY),  {2, 2}},
-    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF1, HWC_DISPLAY_EXTERNAL), {0, 2}},
-    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF1, HWC_DISPLAY_VIRTUAL),  {0, 2}},
+    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF0, HWC_DISPLAY_PRIMARY),  {0, 1}},
+    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF0, HWC_DISPLAY_EXTERNAL), {1, 1}},
+    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF0, HWC_DISPLAY_VIRTUAL),  {1, 1}},
+    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF1, HWC_DISPLAY_PRIMARY),  {1, 1}},
+    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF1, HWC_DISPLAY_EXTERNAL), {0, 1}},
+    {HWResourceIndexes(TDM_ATTR_ROT_90, DPUF1, HWC_DISPLAY_VIRTUAL),  {0, 1}},
 };
 
 typedef enum lbWidthIndex {
